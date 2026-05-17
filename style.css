@@ -261,3 +261,29 @@ footer {
   color: inherit;
   display: block;
 }
+
+/* ==========================================
+   EFEK MENGETIK (TYPING EFFECT)
+   ========================================== */
+.hero-typing {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 30px;
+}
+
+.txt-type {
+  color: var(--primary); /* Menggunakan warna teal khas webmu */
+  font-weight: 600;
+}
+
+/* Membuat kursor vertikal | berkedip halus */
+.cursor {
+  animation: kedipKursor 0.7s infinite;
+  color: var(--primary);
+  margin-left: 2px;
+}
+
+@keyframes kedipKursor {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
