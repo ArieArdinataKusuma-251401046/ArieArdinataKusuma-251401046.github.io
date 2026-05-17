@@ -254,3 +254,10 @@ footer {
     text-align: justify; /* Membuat teks deskripsi lebih rapi di layar kecil */
   }
 }
+
+/* Menghilangkan format link bawaan pada kartu proyek Wattpad */
+.project-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
