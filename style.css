@@ -255,11 +255,56 @@ footer {
   }
 }
 
-/* Menghilangkan format link bawaan pada kartu proyek Wattpad */
-.project-card-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
+/* ==========================================
+   DESAIN TOMBOL KUNJUNGI NOVEL
+   ========================================== */
+
+/* Mengatur ruang di dalam kartu novel */
+.novel-card .card-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Wadah tombol */
+.card-action {
+  margin-top: 15px;
+  opacity: 0; /* Sembunyikan tombol secara bawaan */
+  transform: translateY(10px); /* Geser sedikit ke bawah */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Desain Tombol "Kunjungi Novel" */
+.btn-visit {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: var(--primary);
+  color: white !important;
+  text-decoration: none !important;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.btn-visit:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Efek saat Kartu di-Hover: Tampilkan Tombol */
+.novel-card:hover .card-action {
+  opacity: 1; /* Buat tombol terlihat */
+  transform: translateY(0); /* Kembalikan posisinya ke atas */
+}
+
+/* Khusus Layar HP: Tombol langsung muncul tanpa harus di-hover */
+@media screen and (max-width: 768px) {
+  .card-action {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ==========================================
