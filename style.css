@@ -1,4 +1,4 @@
-/* Variabel Warna (Hijau Biru Light) */
+
 :root {
   --bg-color: #f0fdfa; /* Cyan sangat muda */
   --text-main: #0f766e; /* Teal gelap */
@@ -31,7 +31,9 @@ body {
   padding: 0 20px;
 }
 
-/* Navbar Modern Sticky */
+/* ==========================================
+   NAVBAR MODERN STICKY
+   ========================================== */
 .navbar {
   position: fixed;
   top: 0;
@@ -69,7 +71,9 @@ body {
   color: var(--primary);
 }
 
-/* Hero Section */
+/* ==========================================
+   HERO SECTION & EFEK MENGETIK
+   ========================================== */
 .hero {
   height: 100vh;
   display: flex;
@@ -89,10 +93,27 @@ body {
   color: var(--primary);
 }
 
-.hero .subtitle {
+.hero-typing {
   font-size: 1.2rem;
   color: var(--text-muted);
   margin-bottom: 30px;
+}
+
+.txt-type {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Membuat kursor vertikal | berkedip halus */
+.cursor {
+  animation: kedipKursor 0.7s infinite;
+  color: var(--primary);
+  margin-left: 2px;
+}
+
+@keyframes kedipKursor {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
 }
 
 .btn {
@@ -113,7 +134,9 @@ body {
   box-shadow: 0 6px 20px rgba(20, 184, 166, 0.4);
 }
 
-/* Bagian Umum Section */
+/* ==========================================
+   BAGIAN UMUM SECTION & PROYEK GRID
+   ========================================== */
 section {
   padding: 100px 20px;
 }
@@ -133,7 +156,6 @@ section h2 {
   color: var(--text-muted);
 }
 
-/* Grid Proyek */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -172,94 +194,9 @@ section h2 {
   font-size: 0.95rem;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 30px;
-  background-color: #0f766e;
-  color: white;
-  font-size: 0.9rem;
-}
-
-/* Kelas Animasi JS */
-.fade-in {
-  animation: fadeIn 1.5s ease forwards;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.scroll-reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease-out;
-}
-
-.scroll-reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ==========================================
-   MEDIA QUERIES (Untuk Perangkat Seluler)
-   ========================================== */
-
-@media screen and (max-width: 768px) {
-  /* 1. Navbar Menjadi Vertikal / Lebih Rapi */
-  .navbar {
-    padding: 15px 20px;
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-  }
-
-  .nav-links {
-    gap: 15px;
-    font-size: 0.9rem;
-  }
-
-  /* 2. Menyesuaikan Ukuran Teks di Hero Section */
-  .hero {
-    padding: 0 20px;
-  }
-
-  .hero h1 {
-    font-size: 2.2rem; /* Ukuran teks judul diperkecil agar tidak terpotong */
-  }
-
-  .hero .subtitle {
-    font-size: 1rem;
-    margin-bottom: 20px;
-  }
-
-  /* 3. Menyesuaikan Padding Section dan Grid Proyek */
-  section {
-    padding: 60px 15px; /* Mengurangi padding atas-bawah agar tidak terlalu renggang */
-  }
-
-  section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 25px;
-  }
-
-  .project-grid {
-    grid-template-columns: 1fr; /* Memaksa kartu proyek berbaris 1 kolom ke bawah */
-    gap: 20px;
-  }
-  
-  .about p {
-    font-size: 1rem;
-    text-align: justify; /* Membuat teks deskripsi lebih rapi di layar kecil */
-  }
-}
-
 /* ==========================================
    DESAIN TOMBOL KUNJUNGI NOVEL
    ========================================== */
-
-/* Mengatur ruang di dalam kartu novel */
 .novel-card .card-content {
   position: relative;
   display: flex;
@@ -267,15 +204,13 @@ footer {
   justify-content: space-between;
 }
 
-/* Wadah tombol */
 .card-action {
   margin-top: 15px;
-  opacity: 0; /* Sembunyikan tombol secara bawaan */
-  transform: translateY(10px); /* Geser sedikit ke bawah */
+  opacity: 0; /* Sembunyikan tombol secara bawaan di laptop */
+  transform: translateY(10px);
   transition: all 0.3s ease-in-out;
 }
 
-/* Desain Tombol "Kunjungi Novel" */
 .btn-visit {
   display: inline-block;
   padding: 8px 20px;
@@ -293,48 +228,13 @@ footer {
   background-color: var(--primary-hover);
 }
 
-/* Efek saat Kartu di-Hover: Tampilkan Tombol */
 .novel-card:hover .card-action {
-  opacity: 1; /* Buat tombol terlihat */
-  transform: translateY(0); /* Kembalikan posisinya ke atas */
-}
-
-/* Khusus Layar HP: Tombol langsung muncul tanpa harus di-hover */
-@media screen and (max-width: 768px) {
-  .card-action {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  opacity: 1; /* Muncul saat di-hover */
+  transform: translateY(0);
 }
 
 /* ==========================================
-   EFEK MENGETIK (TYPING EFFECT)
-   ========================================== */
-.hero-typing {
-  font-size: 1.2rem;
-  color: var(--text-muted);
-  margin-bottom: 30px;
-}
-
-.txt-type {
-  color: var(--primary); /* Menggunakan warna teal khas webmu */
-  font-weight: 600;
-}
-
-/* Membuat kursor vertikal | berkedip halus */
-.cursor {
-  animation: kedipKursor 0.7s infinite;
-  color: var(--primary);
-  margin-left: 2px;
-}
-
-@keyframes kedipKursor {
-  0%, 100% { opacity: 0; }
-  50% { opacity: 1; }
-}
-
-/* ==========================================
-   DESAIN LAYOUT CV TERBARU & LAYOUT EFEKTIF
+   DESAIN LAYOUT CURRICULUM VITAE (CV)
    ========================================== */
 .cv {
   background-color: #e6f7f4; 
@@ -386,7 +286,7 @@ footer {
   margin: 25px 0;
 }
 
-/* --- Desain Bagian Pendidikan (Dengan Garis Jalur Perjalanan) --- */
+/* --- Pendidikan (Garis Putus-putus) --- */
 .cv-section-wrapper {
   display: grid;
   grid-template-columns: 250px 1fr;
@@ -401,13 +301,11 @@ footer {
   margin-bottom: 20px;
 }
 
-/* Wadah utama timeline diberi padding kiri untuk ruang garis */
 .education-timeline {
   display: flex;
   flex-direction: column;
   position: relative;
   padding-left: 20px; 
-  /* Garis putus-putus utama di sebelah kiri */
   border-left: 2px dashed rgba(20, 184, 166, 0.4); 
 }
 
@@ -417,14 +315,13 @@ footer {
 }
 
 .edu-item:last-child {
-  padding-bottom: 0; /* Biar item terakhir tidak terlalu renggang di bawah */
+  padding-bottom: 0;
 }
 
-/* Membuat titik lingkaran kecil estetik di setiap awal sekolah */
 .edu-item::before {
   content: '';
   position: absolute;
-  left: -27px; /* Menyelaraskan titik pas di tengah garis putus-putus */
+  left: -27px;
   top: 6px;
   width: 12px;
   height: 12px;
@@ -459,7 +356,6 @@ footer {
   margin: 5px 0 0 0;
 }
 
-/* Badge Status Ongoing */
 .status-badge.ongoing {
   font-size: 0.75rem;
   font-weight: 600;
@@ -470,27 +366,7 @@ footer {
   text-transform: uppercase;
 }
 
-/* Penyesuaian responsif layar HP agar jarak garis tidak rusak */
-@media screen and (max-width: 768px) {
-  .education-timeline {
-    padding-left: 15px;
-  }
-  .edu-item::before {
-    left: -22px;
-  }
-}
-/* Badge Status Ongoing */
-.status-badge.ongoing {
-  font-size: 0.75rem;
-  font-weight: 600;
-  background-color: #f59e0b; /* Warna Amber/Orange */
-  color: white;
-  padding: 2px 8px;
-  border-radius: 10px;
-  text-transform: uppercase;
-}
-
-/* --- Desain Grid Pengalaman (Dua Kolom) --- */
+/* --- Grid Pengalaman (Dua Kolom) --- */
 .cv-experience-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -512,17 +388,16 @@ footer {
   margin-bottom: 8px;
 }
 
-/* Persegi Bulat Kategori Badge */
 .badge-cat {
   font-size: 0.8rem;
   font-weight: 600;
   padding: 4px 12px;
-  border-radius: 12px; /* Membuat efek persegi bundar */
+  border-radius: 12px;
 }
 
-.school-badge { background-color: #e0f2fe; color: #0369a1; } /* Biru muda */
-.env-badge { background-color: #dcfce7; color: #15803d; }    /* Hijau muda */
-.campus-badge { background-color: #fef3c7; color: #b45309; } /* Kuning muda */
+.school-badge { background-color: #e0f2fe; color: #0369a1; }
+.env-badge { background-color: #dcfce7; color: #15803d; } 
+.campus-badge { background-color: #fef3c7; color: #b45309; }
 
 .exp-date {
   font-size: 0.85rem;
@@ -551,7 +426,7 @@ footer {
   line-height: 1.5;
 }
 
-/* --- Desain Bagian Keahlian --- */
+/* --- Bagian Keahlian --- */
 .cv-skills h3 {
   font-size: 1.4rem;
   color: #115e59;
@@ -574,14 +449,103 @@ footer {
 .text-tech { background-color: #e0f2fe; color: #0369a1; }
 .text-creative { background-color: #fce7f3; color: #be185d; }
 
-/* --- Penyesuaian Responsif HP --- */
+/* ==========================================
+   FOOTER
+   ========================================== */
+footer {
+  text-align: center;
+  padding: 30px;
+  background-color: #0f766e;
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* ==========================================
+   KELAS ANIMASI JS
+   ========================================== */
+.fade-in {
+  animation: fadeIn 1.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================
+   MEDIA QUERIES (Semua Fungsi HP Disatukan Di Sini)
+   ========================================== */
 @media screen and (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .nav-links {
+    gap: 15px;
+    font-size: 0.9rem;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero .subtitle {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  section {
+    padding: 60px 15px;
+  }
+
+  section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .about p {
+    font-size: 1rem;
+    text-align: justify;
+  }
+
+  /* CSS HP Untuk Tombol Novel */
+  .card-action {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* CSS HP Untuk CV */
   .cv-profile {
     flex-direction: column;
     gap: 15px;
   }
   .cv-section-wrapper {
     grid-template-columns: 1fr;
+  }
+  .education-timeline {
+    padding-left: 15px;
+  }
+  .edu-item::before {
+    left: -22px;
   }
   .cv-experience-grid {
     grid-template-columns: 1fr;
@@ -594,4 +558,4 @@ footer {
     flex-direction: row;
     justify-content: space-between;
   }
-}
+} /* <--- Kurung Kurawal Penutup Utama Media Query */
