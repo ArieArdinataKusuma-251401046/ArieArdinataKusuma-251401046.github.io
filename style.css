@@ -286,6 +286,103 @@ section h2 {
   margin: 25px 0;
 }
 
+/* ==========================================
+   DESAIN BARU: HEADER PROFIL CV & POLAROID
+   ========================================== */
+.cv-header-profile {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+/* Bingkai Polaroid */
+.polaroid-wrapper {
+  flex-shrink: 0;
+}
+
+.polaroid-frame {
+  background: #ffffff;
+  padding: 12px 12px 18px 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transform: rotate(-3deg); /* Efek miring estetik khas polaroid */
+  transition: transform 0.3s ease;
+  width: 160px;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.polaroid-frame:hover {
+  transform: rotate(0deg) scale(1.05); /* Lurus dan membesar sedikit saat di-hover */
+}
+
+.polaroid-photo {
+  width: 136px;
+  height: 140px;
+  background-color: #ddd; /* Warna default kalau foto belum di-load */
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.polaroid-caption {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  color: #475569;
+  margin-top: 10px;
+}
+
+/* Detail Teks di Samping Polaroid */
+.profile-details {
+  flex-index: 1;
+}
+
+.cv-full-name {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #115e59;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  margin-bottom: 5px;
+}
+
+.cv-job-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cv-summary {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  text-align: justify;
+  line-height: 1.6;
+}
+
+/* Penyesuaian Tampilan untuk Layar HP */
+@media screen and (max-width: 768px) {
+  .cv-header-profile {
+    flex-direction: column; /* Polaroid pindah ke atas teks saat di HP */
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .polaroid-frame {
+    transform: rotate(0deg); /* Di HP dibuat lurus saja agar rapi */
+    margin: 0 auto;
+  }
+  
+  .cv-full-name {
+    font-size: 1.8rem;
+  }
+  
+  .cv-summary {
+    text-align: justify;
+  }
+}
+
 /* --- Pendidikan (Garis Putus-putus) --- */
 .cv-section-wrapper {
   display: grid;
