@@ -77,3 +77,47 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
 });
+
+// ==========================================
+// LOGIKA GABUNGAN: AUTOPLAY & TOMBOL BGM
+// ==========================================
+const bgm = document.getElementById('bgm');
+const musicBtn = document.getElementById('music-control');
+const musicIcon = document.getElementById('music-icon');
+
+// 1. Fungsi Utama untuk Memutar Audio & Mengubah Visual Tombol
+function playMusicAudio() {
+  bgm.play().then(() => {
+    if (musicIcon && musicBtn) {
+      musicIcon.innerText = '⏸️'; // Ubah jadi ikon Pause
+      musicBtn.classList.add('playing'); // Jalankan animasi berputar
+    }
+  }).catch(error => {
+    console.log("Autoplay diblokir browser, menunggu interaksi pertama pengguna...");
+  });
+}
+
+// 2. Fungsi untuk Tombol On/Off saat Diklik Manual oleh Pengunjung
+function toggleMusic() {
+  if (bgm.paused) {
+    playMusicAudio();
+  } else {
+    bgm.pause();
+    musicIcon.innerText = '🎵'; // Kembalikan jadi ikon Balok Musik
+    musicBtn.classList.remove('playing'); // Hentikan animasi berputar
+  }
+}
+
+// 3. Trik Autoplay: Paksa Musik Berputar Begitu Mendeteksi Klik Pertama di Area Mana Saja
+const pemicuAutoplay = () => {
+  if (bgm.paused) {
+    playMusicAudio();
+  }
+  // Langsung hapus event listener ini setelah sukses berjalan 1 kali
+  document.removeEventListener('click', pemicuAutoplay);
+  document.removeEventListener('touchstart', pemicuAutoplay);
+};
+
+// Daftarkan event klik global ke browser
+document.addEventListener('click', pemicuAutoplay);
+document.addEventListener('touchstart', pemicuAutoplay);
