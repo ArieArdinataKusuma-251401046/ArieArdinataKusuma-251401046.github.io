@@ -231,6 +231,41 @@
     </div>
   </section>
 
+<section id="feedback" class="feedback scroll-reveal">
+    <div class="container">
+      <h2>Berikan Ulasan Anda</h2>
+      <div class="feedback-card">
+        
+        <form action="https://formspree.io/f/meedajvw" method="POST" class="feedback-form">
+          
+          <div class="form-group">
+            <label for="fb-name">Nama Lengkap</label>
+            <input type="text" id="fb-name" name="Nama" placeholder="Masukkan nama Anda" required>
+          </div>
+
+          <div class="form-group">
+            <label>Rating Portofolio</label>
+            <div class="star-rating">
+              <input type="radio" id="star5" name="Rating" value="5 Bintang" required><label for="star5" title="Sempurna!">★</label>
+              <input type="radio" id="star4" name="Rating" value="4 Bintang"><label for="star4" title="Bagus">★</label>
+              <input type="radio" id="star3" name="Rating" value="3 Bintang"><label for="star3" title="Cukup">★</label>
+              <input type="radio" id="star2" name="Rating" value="2 Bintang"><label for="star2" title="Buruk">★</label>
+              <input type="radio" id="star1" name="Rating" value="1 Bintang"><label for="star1" title="Sangat Buruk">★</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="fb-comment">Komentar / Saran</label>
+            <textarea id="fb-comment" name="Komentar" rows="5" placeholder="Tuliskan pesan, kesan, atau kritik membangun di sini..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-submit">Kirim Ulasan</button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+  
   <footer>
     <p>&copy; 2026 Arie Ardinata. Dibuat dengan cinta &lt;3.</p>
   </footer>
