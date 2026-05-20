@@ -750,3 +750,51 @@ footer {
     padding: 25px 20px;
   }
 }
+
+/* ==========================================
+   TOMBOL KONTROL BGM MELAYANG (TEAL THEME)
+   ========================================== */
+.music-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary); /* Menggunakan warna teal khas webmu */
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(20, 184, 166, 0.4);
+  z-index: 2000;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.music-btn:hover {
+  transform: scale(1.1);
+  background-color: var(--primary-hover);
+}
+
+/* Efek berputar lambat saat musik aktif bermain */
+.music-btn.playing {
+  animation: putarMusik 4s linear infinite;
+}
+
+@keyframes putarMusik {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Penyesuaian responsif posisinya di Layar HP */
+@media screen and (max-width: 768px) {
+  .music-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+}
