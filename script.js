@@ -42,37 +42,32 @@ document.addEventListener("DOMContentLoaded", function() {
       const current = wordIndex % words.length;
       const fullTxt = words[current];
 
-      // Tentukan apakah sedang mengetik atau menghapus huruf
       if (isDeleting) {
         txt = fullTxt.substring(0, txt.length - 1);
       } else {
         txt = fullTxt.substring(0, txt.length + 1);
       }
 
-      // Masukkan teks ke dalam HTML
       txtType.innerHTML = txt;
 
-      // Kecepatan ketik dasar (milidetik)
       let typeSpeed = 150;
 
       if (isDeleting) {
-        typeSpeed /= 2; // Waktu menghapus dibuat lebih cepat
+        typeSpeed /= 2;
       }
 
-      // Jika satu kata sudah selesai diketik penuh
       if (!isDeleting && txt === fullTxt) {
-        typeSpeed = wait; // Berhenti sejenak (sesuai data-wait: 2 detik)
+        typeSpeed = wait;
         isDeleting = true;
       } else if (isDeleting && txt === '') {
         isDeleting = false;
-        wordIndex++; // Ganti ke kata berikutnya
-        typeSpeed = 500; // Jeda sebelum mulai mengetik kata baru
+        wordIndex++;
+        typeSpeed = 500;
       }
 
       setTimeout(() => typeEffect(), typeSpeed);
     }
 
-    // Jalankan efek mengetik pertama kali
     typeEffect();
   }
 
@@ -87,10 +82,11 @@ const musicIcon = document.getElementById('music-icon');
 
 // 1. Fungsi Utama untuk Memutar Audio & Mengubah Visual Tombol
 function playMusicAudio() {
+  if (!bgm) return; // Mencegah error jika elemen audio tidak ditemukan
   bgm.play().then(() => {
     if (musicIcon && musicBtn) {
-      musicIcon.innerText = '⏸️'; // Ubah jadi ikon Pause
-      musicBtn.classList.add('playing'); // Jalankan animasi berputar
+      musicIcon.innerText = '⏸️'; 
+      musicBtn.classList.add('playing'); 
     }
   }).catch(error => {
     console.log("Autoplay diblokir browser, menunggu interaksi pertama pengguna...");
@@ -99,21 +95,23 @@ function playMusicAudio() {
 
 // 2. Fungsi untuk Tombol On/Off saat Diklik Manual oleh Pengunjung
 function toggleMusic() {
+  if (!bgm) return;
   if (bgm.paused) {
     playMusicAudio();
   } else {
     bgm.pause();
-    musicIcon.innerText = '🎵'; // Kembalikan jadi ikon Balok Musik
-    musicBtn.classList.remove('playing'); // Hentikan animasi berputar
+    if (musicIcon && musicBtn) {
+      musicIcon.innerText = '🎵'; 
+      musicBtn.classList.remove('playing'); 
+    }
   }
 }
 
 // 3. Trik Autoplay: Paksa Musik Berputar Begitu Mendeteksi Klik Pertama di Area Mana Saja
 const pemicuAutoplay = () => {
-  if (bgm.paused) {
+  if (bgm && bgm.paused) {
     playMusicAudio();
   }
-  // Langsung hapus event listener ini setelah sukses berjalan 1 kali
   document.removeEventListener('click', pemicuAutoplay);
   document.removeEventListener('touchstart', pemicuAutoplay);
 };
