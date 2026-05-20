@@ -656,3 +656,97 @@ footer {
     justify-content: space-between;
   }
 } /* <--- Kurung Kurawal Penutup Utama Media Query */
+
+/* ==========================================
+   DESAIN KOTAK SARAN & RATING BINTANG
+   ========================================== */
+.feedback {
+  background-color: #ffffff;
+}
+
+.feedback-card {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #f0fdfa; /* Sesuai variabel --bg-color kamu */
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(15, 118, 110, 0.05);
+  border: 1px solid rgba(20, 184, 166, 0.1);
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #115e59;
+  font-size: 0.95rem;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+  font-family: 'Poppins', sans-serif;
+  padding: 12px 15px;
+  border: 1px solid rgba(20, 184, 166, 0.3);
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.15);
+}
+
+/* Logika & Style Rating Bintang Terbalik (Kanan ke Kiri untuk Hover CSS) */
+.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.star-rating input {
+  display: none;
+}
+
+.star-rating label {
+  font-size: 2rem;
+  color: #cbd5e1; /* Warna abu-abu saat belum dipilih */
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+/* Efek menyala saat di-hover atau dipilih */
+.star-rating id:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: #f59e0b; /* Warna Amber/Emas */
+}
+
+.btn-submit {
+  border: none;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .feedback-card {
+    padding: 25px 20px;
+  }
+}
