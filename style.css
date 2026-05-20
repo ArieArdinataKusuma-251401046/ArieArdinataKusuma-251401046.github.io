@@ -731,7 +731,7 @@ footer {
 }
 
 /* Efek menyala saat di-hover atau dipilih */
-.star-rating id:checked ~ label,
+.star-rating input:checked ~ label,
 .star-rating label:hover,
 .star-rating label:hover ~ label {
   color: #f59e0b; /* Warna Amber/Emas */
