@@ -267,7 +267,7 @@ section h2 {
 }
 
 .tag-link {
-  display: inline-block;
+  display: block;
   padding: 4px 12px;
   background-color: #f0fdfa;
   color: var(--primary);
@@ -275,8 +275,9 @@ section h2 {
   border-radius: 15px;
   font-size: 0.85rem;
   font-weight: 600;
-  margin-right: 5px;
+  margin-right: 0; /* Jarak sekarang dikontrol penuh oleh gap pada .social-tags */
   border: 1px solid rgba(20, 184, 166, 0.2);
+  text-align: center;
 }
 
 .cv-divider {
@@ -796,5 +797,118 @@ footer {
     width: 45px;
     height: 45px;
     font-size: 1.1rem;
+  }
+}
+
+/* ==========================================
+   ENGINE POPUP PREVIEW SOSIAL MEDIA (NEW)
+   ========================================== */
+
+/* Memastikan susunan tombol aman saat menyusut */
+.social-tags {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap; 
+}
+
+/* Wrapper wajib relative agar posisi kotak popup mengunci tepat di atas tombol */
+.social-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Kotak Popup Preview Utama (Tersembunyi secara default) */
+.preview-popup {
+  position: absolute;
+  bottom: 150%; /* Jarak melayang aman di atas tombol tag */
+  left: 50%;
+  transform: translateX(-50%) translateY(10px); /* Efek turun sedikit sebelum di-hover */
+  width: 240px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 10px 30px rgba(15, 118, 110, 0.18); /* Shadow halus bertema teal */
+  padding: 14px;
+  z-index: 9999; /* Lapisan mutlak paling depan agar tidak tertutup elemen lain */
+  
+  /* Animasi Transisi Smooth */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              visibility 0.3s;
+  
+  /* Reset text alignment agar teks di dalam popup rapi rata kiri */
+  text-align: left;
+}
+
+/* Segitiga / Panah Kecil di Bawah Kotak Popup */
+.preview-popup::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #ffffff transparent transparent transparent;
+}
+
+/* --- TRIGGER HOVER: Memunculkan Popup --- */
+.social-wrapper:hover .preview-popup {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0); /* Meluncur naik dengan anggun */
+}
+
+/* Konten Teks & Judul di Dalam Popup */
+.popup-content h4 {
+  margin: 0 0 4px 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-main);
+  font-family: 'Poppins', sans-serif;
+}
+
+.popup-content p {
+  margin: 0 0 12px 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Gambar Screenshot / Header Profil di Dalam Popup */
+.popup-img {
+  width: 100%;
+  height: 85px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Tombol Akses "Kunjungi ->" */
+.visit-btn {
+  display: block;
+  text-align: center;
+  background: var(--primary);
+  color: #ffffff !important; /* Memaksa teks tetap putih bersih */
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 7px 0;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.visit-btn:hover {
+  background: var(--primary-hover);
+}
+
+/* Penyesuaian Responsif Layar HP */
+@media screen and (max-width: 768px) {
+  /* Menyembunyikan popup melayang di HP agar tidak mengganggu scroll layar sentuh */
+  .preview-popup {
+    display: none !important;
   }
 }
