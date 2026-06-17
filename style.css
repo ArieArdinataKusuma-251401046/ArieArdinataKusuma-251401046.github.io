@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: var(--bg-color);
   color: var(--text-main);
   line-height: 1.6;
@@ -86,13 +86,17 @@ body {
 
 /* Bola Cahaya Kiri Atas */
 .hero::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -10%;
   left: -10%;
   width: 450px;
   height: 450px;
-  background: radial-gradient(circle, rgba(20, 184, 166, 0.4) 0%, rgba(224, 242, 254, 0) 70%);
+  background: radial-gradient(
+    circle,
+    rgba(20, 184, 166, 0.4) 0%,
+    rgba(224, 242, 254, 0) 70%
+  );
   filter: blur(80px); /* Efek blur ala Apple / Aurora */
   z-index: 1;
   pointer-events: none; /* Agar tidak menghalangi klik mouse */
@@ -100,21 +104,25 @@ body {
 
 /* Bola Cahaya Kanan Bawah */
 .hero::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -5%;
   right: -5%;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(13, 148, 136, 0.3) 0%, rgba(204, 251, 241, 0) 70%);
+  background: radial-gradient(
+    circle,
+    rgba(13, 148, 136, 0.3) 0%,
+    rgba(204, 251, 241, 0) 70%
+  );
   filter: blur(90px);
   z-index: 1;
   pointer-events: none;
 }
 
 /* Pastikan konten teks berdiri di depan bola cahaya */
-.hero h1, 
-.hero .hero-typing, 
+.hero h1,
+.hero .hero-typing,
 .hero .btn {
   position: relative;
   z-index: 2; /* Melompati z-index bola cahaya */
@@ -149,8 +157,13 @@ body {
 }
 
 @keyframes kedipKursor {
-  0%, 100% { opacity: 0; }
-  50% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 .btn {
@@ -161,7 +174,10 @@ body {
   text-decoration: none;
   border-radius: 30px;
   font-weight: 600;
-  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
   box-shadow: 0 4px 15px rgba(20, 184, 166, 0.3);
 }
 
@@ -204,7 +220,9 @@ section h2 {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
 }
 
 .project-card:hover {
@@ -274,7 +292,7 @@ section h2 {
    DESAIN LAYOUT CURRICULUM VITAE (CV)
    ========================================== */
 .cv {
-  background-color: #e6f7f4; 
+  background-color: #e6f7f4;
 }
 
 .cv-card {
@@ -346,7 +364,7 @@ section h2 {
   transform: rotate(-3deg); /* Efek miring estetik khas polaroid */
   transition: transform 0.3s ease;
   width: 160px;
-  border: 1px solid rgba(0,0,0,0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .polaroid-frame:hover {
@@ -357,11 +375,11 @@ section h2 {
   width: 136px;
   height: 140px;
   background-color: #ddd; /* Warna default kalau foto belum di-load */
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .polaroid-caption {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 0.85rem;
   font-weight: 600;
   text-align: center;
@@ -406,7 +424,8 @@ section h2 {
   gap: 20px;
 }
 
-.cv-column-title h3, .column-header-title h3 {
+.cv-column-title h3,
+.column-header-title h3 {
   font-size: 1.4rem;
   color: #115e59;
   border-left: 4px solid var(--primary);
@@ -418,8 +437,8 @@ section h2 {
   display: flex;
   flex-direction: column;
   position: relative;
-  padding-left: 20px; 
-  border-left: 2px dashed rgba(20, 184, 166, 0.4); 
+  padding-left: 20px;
+  border-left: 2px dashed rgba(20, 184, 166, 0.4);
 }
 
 .edu-item {
@@ -432,7 +451,7 @@ section h2 {
 }
 
 .edu-item::before {
-  content: '';
+  content: "";
   position: absolute;
   left: -27px;
   top: 6px;
@@ -508,9 +527,18 @@ section h2 {
   border-radius: 12px;
 }
 
-.school-badge { background-color: #e0f2fe; color: #0369a1; }
-.env-badge { background-color: #dcfce7; color: #15803d; } 
-.campus-badge { background-color: #fef3c7; color: #b45309; }
+.school-badge {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+.env-badge {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+.campus-badge {
+  background-color: #fef3c7;
+  color: #b45309;
+}
 
 .exp-date {
   font-size: 0.85rem;
@@ -559,8 +587,14 @@ section h2 {
   font-weight: 600;
 }
 
-.text-tech { background-color: #e0f2fe; color: #0369a1; }
-.text-creative { background-color: #fce7f3; color: #be185d; }
+.text-tech {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+.text-creative {
+  background-color: #fce7f3;
+  color: #be185d;
+}
 
 /* ==========================================
    FOOTER
@@ -581,8 +615,14 @@ footer {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .scroll-reveal {
@@ -633,7 +673,7 @@ footer {
 
 .form-group input[type="text"],
 .form-group textarea {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   padding: 12px 15px;
   border: 1px solid rgba(20, 184, 166, 0.3);
   border-radius: 10px;
@@ -677,7 +717,7 @@ footer {
 .btn-submit {
   border: none;
   cursor: pointer;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   text-align: center;
   width: 100%;
 }
@@ -703,7 +743,9 @@ footer {
   box-shadow: 0 4px 15px rgba(20, 184, 166, 0.4);
   z-index: 2000;
   transform: scale(var(--scale-factor));
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
 }
 
 .music-btn:hover {
@@ -717,8 +759,12 @@ footer {
 }
 
 @keyframes putarMusik {
-  from { transform: rotate(0deg) scale(var(--scale-factor)); }
-  to { transform: rotate(360deg) scale(var(--scale-factor)); }
+  from {
+    transform: rotate(0deg) scale(var(--scale-factor));
+  }
+  to {
+    transform: rotate(360deg) scale(var(--scale-factor));
+  }
 }
 
 /* ==========================================
@@ -727,7 +773,7 @@ footer {
 .social-tags {
   display: flex;
   gap: 12px;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
 }
 
 .social-wrapper {
@@ -748,9 +794,10 @@ footer {
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
-              transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
-              visibility 0.3s;
+  transition:
+    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 0.3s;
   text-align: left;
 }
 
@@ -776,7 +823,7 @@ footer {
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--text-main);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .popup-content p {
@@ -784,7 +831,7 @@ footer {
   font-size: 0.8rem;
   color: var(--text-muted);
   line-height: 1.4;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .popup-img {
@@ -851,7 +898,7 @@ footer {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  
+
   .about p {
     font-size: 1rem;
     text-align: justify;
@@ -872,16 +919,16 @@ footer {
     text-align: center;
     gap: 20px;
   }
-  
+
   .polaroid-frame {
     transform: rotate(0deg);
     margin: 0 auto;
   }
-  
+
   .cv-full-name {
     font-size: 1.8rem;
   }
-  
+
   .cv-summary {
     text-align: justify;
   }
@@ -926,5 +973,218 @@ footer {
 
   .preview-popup {
     display: none !important; /* Blokir melayang di layar sentuh HP */
+  }
+}
+
+/* ==========================================
+   TEMA: CATPPUCCIN FRAPPÉ (RETRO VIBES)
+   ========================================== */
+body.theme-frappe {
+  --bg-color: #303446; /* Base */
+  --text-main: #c6d0f5; /* Text */
+  --text-muted: #838ba7; /* Subtext0 */
+  --primary: #8caaee; /* Sapphire */
+  --primary-hover: #babbf1; /* Lavender */
+  --card-bg: #292c3c; /* Mantle */
+}
+
+/* Transisi Warna Agar Smooth saat Berubah */
+body,
+.navbar,
+.cv,
+.project-card,
+.feedback-card,
+.btn,
+footer {
+  transition:
+    background-color 0.8s ease,
+    color 0.8s ease,
+    box-shadow 0.8s ease;
+}
+
+/* Penyesuaian Elemen Spesifik untuk Frappé */
+body.theme-frappe .navbar {
+  background: rgba(48, 52, 70, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+body.theme-frappe .cv {
+  background-color: #232634;
+}
+body.theme-frappe footer {
+  background-color: #232634;
+}
+body.theme-frappe .hero::before {
+  background: radial-gradient(
+    circle,
+    rgba(140, 170, 238, 0.25) 0%,
+    rgba(48, 52, 70, 0) 70%
+  );
+}
+body.theme-frappe .hero::after {
+  background: radial-gradient(
+    circle,
+    rgba(166, 209, 137, 0.2) 0%,
+    rgba(48, 52, 70, 0) 70%
+  );
+}
+body.theme-frappe .polaroid-frame {
+  background: #292c3c;
+  border-color: rgba(255, 255, 255, 0.05);
+}
+body.theme-frappe .polaroid-caption {
+  color: #c6d0f5;
+}
+body.theme-frappe .form-group input,
+body.theme-frappe .form-group textarea {
+  background: #232634;
+  border-color: rgba(140, 170, 238, 0.3);
+}
+
+/* ==========================================
+   DESAIN MINI TERMINAL WIDGET
+   ========================================== */
+.term-toggle-btn {
+  position: fixed;
+  bottom: 95px; /* Ditempatkan di atas tombol musik */
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: #414559;
+  color: #c6d0f5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 2000;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.term-toggle-btn:hover {
+  background-color: #51576d;
+  transform: translateY(-3px);
+}
+
+.mini-terminal {
+  position: fixed;
+  bottom: 155px;
+  right: 30px;
+  width: 320px;
+  background: rgba(35, 38, 52, 0.95); /* Crust color */
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  font-family: "Courier New", Courier, monospace;
+  color: #c6d0f5;
+
+  /* Animasi Muncul */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.95) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.mini-terminal.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1) !important;
+}
+
+.terminal-header {
+  background: #292c3c;
+  padding: 8px 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.term-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.term-dot.close {
+  background: #e78284;
+}
+.term-dot.min {
+  background: #e5c890;
+}
+.term-dot.max {
+  background: #a6d189;
+}
+.term-title {
+  font-size: 0.75rem;
+  color: #838ba7;
+  margin-left: 10px;
+}
+
+.terminal-body {
+  padding: 15px;
+}
+.term-hint {
+  font-size: 0.8rem;
+  color: #838ba7;
+  margin-bottom: 15px;
+}
+.term-hint .highlight-cmd {
+  color: #8caaee;
+  background: rgba(140, 170, 238, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.term-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.term-prompt {
+  color: #a6d189;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+.term-input-wrapper input {
+  background: transparent;
+  border: none;
+  color: #c6d0f5;
+  font-family: inherit;
+  font-size: 0.9rem;
+  width: 100%;
+  outline: none;
+}
+
+#term-response {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  min-height: 1.4em;
+}
+.term-success {
+  color: #a6d189;
+}
+.term-error {
+  color: #e78284;
+}
+
+@media screen and (max-width: 768px) {
+  .term-toggle-btn {
+    bottom: 80px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+  }
+  .mini-terminal {
+    bottom: 135px;
+    right: 20px;
+    width: 280px;
   }
 }

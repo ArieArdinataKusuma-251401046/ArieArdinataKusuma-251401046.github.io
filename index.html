@@ -483,5 +483,36 @@
     <div id="music-control" class="music-btn" onclick="toggleMusic()">
       <span id="music-icon">🎵</span>
     </div>
+
+    <!-- TOMBOL TOGGLE TERMINAL & WIDGET TERMINAL -->
+    <div id="term-toggle-btn" class="term-toggle-btn" title="Buka Terminal">
+      &gt;_
+    </div>
+
+    <div id="mini-terminal" class="mini-terminal">
+      <div class="terminal-header">
+        <span class="term-dot close"></span>
+        <span class="term-dot min"></span>
+        <span class="term-dot max"></span>
+        <span class="term-title">arie@portfolio:~</span>
+      </div>
+      <div class="terminal-body">
+        <p class="term-hint">
+          Psst.. coba ketik
+          <span class="highlight-cmd">make themes frappe</span>
+        </p>
+        <div class="term-input-wrapper">
+          <span class="term-prompt">~/portfolio $</span>
+          <input
+            type="text"
+            id="term-input"
+            autocomplete="off"
+            spellcheck="false"
+            autofocus
+          />
+        </div>
+        <p id="term-response"></p>
+      </div>
+    </div>
   </body>
 </html>
