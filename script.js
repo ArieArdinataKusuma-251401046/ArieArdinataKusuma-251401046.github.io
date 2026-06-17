@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // 1. ANIMASI SCROLL REVEAL (Dioptimalkan)
+  // 1. ANIMASI SCROLL REVEAL (Bawaan awal)
   const scrollElements = document.querySelectorAll(".scroll-reveal");
 
   const elementInView = (el, dividend = 1) => {
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       txtType.innerHTML = txt;
 
-      let typeSpeed = 150 - Math.random() * 50;
+      let typeSpeed = 150;
 
       if (isDeleting) {
         typeSpeed /= 2;
@@ -73,12 +73,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // ==========================================
-  // 3. AUDIO BACKGROUND MUSIC ENGINE & FADE CONTROL
+  // LOGIKA UTAMA: BGM AUDIO ENGINE (DIPINDAHKAN KE DALAM DOM LOADED)
   // ==========================================
   const bgm = document.getElementById("bgm");
   const musicBtn = document.getElementById("music-control");
   const musicIcon = document.getElementById("music-icon");
 
+  // Fungsi Internal untuk Memutar Audio & Mengubah Visual Tombol
   function playMusicAudio() {
     if (!bgm) return;
     bgm
@@ -90,10 +91,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       })
       .catch((error) => {
-        console.log("Autoplay diblokir browser, menunggu interaksi pengguna.");
+        console.log(
+          "Autoplay diblokir browser, menunggu interaksi pertama pengguna...",
+        );
       });
   }
 
+  // Fungsi Global untuk Tombol On/Off saat Diklik Manual (Ditempel ke window object agar HTML bisa membaca)
   window.toggleMusic = function () {
     if (!bgm) return;
     if (bgm.paused) {
@@ -107,6 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
+  // Trik Autoplay: Paksa Musik Berputar Begitu Mendeteksi Interaksi Pertama Pengguna
   const pemicuAutoplay = () => {
     if (bgm && bgm.paused) {
       playMusicAudio();
@@ -114,10 +119,31 @@ document.addEventListener("DOMContentLoaded", function () {
     document.removeEventListener("click", pemicuAutoplay);
     document.removeEventListener("touchstart", pemicuAutoplay);
   };
+
+  // Daftarkan event klik global begitu DOM siap
   document.addEventListener("click", pemicuAutoplay);
   document.addEventListener("touchstart", pemicuAutoplay);
 
-  // Fungsi Transisi Audio (Fade-out -> Ganti Track -> Fade-in)
+  // ==========================================
+  // LOGIKA MINI TERMINAL & EASTER EGG FRAPPÉ
+  // ==========================================
+  const termToggleBtn = document.getElementById("term-toggle-btn");
+  const miniTerminal = document.getElementById("mini-terminal");
+  const termInput = document.getElementById("term-input");
+  const termResponse = document.getElementById("term-response");
+  let currentTheme = "default";
+
+  // Buka / Tutup Terminal
+  if (termToggleBtn && miniTerminal) {
+    termToggleBtn.addEventListener("click", () => {
+      miniTerminal.classList.toggle("open");
+      if (miniTerminal.classList.contains("open")) {
+        setTimeout(() => termInput.focus(), 100); // Fokus kursor otomatis
+      }
+    });
+  }
+
+  // Fungsi Transisi Audio (Fade-out lagu lama -> Fade-in lagu baru)
   function switchAudioSmoothly(newSrc) {
     if (!bgm) return;
 
@@ -136,6 +162,7 @@ document.addEventListener("DOMContentLoaded", function () {
         bgm
           .play()
           .then(() => {
+            // Pastikan ikon tombol musik berubah jadi pause
             if (
               musicIcon &&
               musicBtn &&
@@ -144,6 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
               musicIcon.innerText = "⏸️";
               musicBtn.classList.add("playing");
             }
+            // Fade-in suara lagu baru
             let fadeInVol = 0;
             const fadeIn = setInterval(() => {
               if (fadeInVol < 0.9) {
@@ -153,33 +181,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 clearInterval(fadeIn);
                 bgm.volume = 1;
               }
-            }, 150);
+            }, 200);
           })
           .catch((e) =>
-            console.log("Menunggu interaksi user untuk ganti trek..."),
+            console.log("Menunggu interaksi untuk putar audio baru..."),
           );
       }
-    }, 80);
+    }, 100);
   }
 
-  // ==========================================
-  // 4. LOGIKA MINI TERMINAL INTERACTIVE WIDGET
-  // ==========================================
-  const termToggleBtn = document.getElementById("term-toggle-btn");
-  const miniTerminal = document.getElementById("mini-terminal");
-  const termInput = document.getElementById("term-input");
-  const termResponse = document.getElementById("term-response");
-  let currentTheme = "default";
-
-  if (termToggleBtn && miniTerminal) {
-    termToggleBtn.addEventListener("click", () => {
-      miniTerminal.classList.toggle("open");
-      if (miniTerminal.classList.contains("open")) {
-        setTimeout(() => termInput.focus(), 150);
-      }
-    });
-  }
-
+  // Deteksi Input Enter di Terminal
   if (termInput) {
     termInput.addEventListener("keydown", function (e) {
       if (e.key === "Enter") {
@@ -192,9 +203,10 @@ document.addEventListener("DOMContentLoaded", function () {
           document.body.classList.add("theme-frappe");
           currentTheme = "frappe";
 
-          // Putar musik retro
+          // Ganti Audio ke Lagu Retro
           switchAudioSmoothly("audio/bgm-retro.mp3");
 
+          // Tutup terminal otomatis setelah 3.5 detik
           setTimeout(() => {
             miniTerminal.classList.remove("open");
             this.value = "";
@@ -209,14 +221,8 @@ document.addEventListener("DOMContentLoaded", function () {
           termResponse.className = "term-success";
           currentTheme = "default";
 
-          // Kembalikan musik santai
+          // Balik ke lagu Yung Kai Blue / Santai
           switchAudioSmoothly("audio/bgm-santai.mp3");
-
-          setTimeout(() => {
-            miniTerminal.classList.remove("open");
-            this.value = "";
-            termResponse.innerHTML = "";
-          }, 2000);
         } else if (command === "") {
           termResponse.innerHTML = "";
         } else {
@@ -224,6 +230,7 @@ document.addEventListener("DOMContentLoaded", function () {
           termResponse.className = "term-error";
         }
 
+        // Kosongkan input setelah Enter jika bukan pesan error panjang
         if (
           command === "make themes frappe" ||
           command === "make themes default"

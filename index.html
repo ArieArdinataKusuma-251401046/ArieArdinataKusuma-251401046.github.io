@@ -8,6 +8,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -37,143 +38,359 @@
       </div>
     </section>
 
-    <section id="about" class="about">
-      <div class="container scroll-reveal">
+    <section id="about" class="about scroll-reveal">
+      <div class="container">
         <h2>Tentang Saya</h2>
         <p>
-          Saya adalah seorang mahasiswa Teknologi Informasi di Universitas Sumatera Utara (USU) angkatan 2024 yang memiliki ketertarikan mendalam dalam dunia pemrograman dan penulisan kreatif. Sebagai seorang Tech Explorer, saya selalu antusias mempelajari teknologi baru dan mengimplementasikannya dalam proyek-proyek inovatif. Di sisi lain, hobi menulis novel memberikan saya perspektif unik dalam membangun narasi dan kreativitas yang juga saya terapkan dalam menyusun kode program yang bersih serta ramah pengguna.
+          Memiliki latar belakang sebagai penulis novel membuat saya selalu
+          tertarik pada dunia kreativitas dan cerita. Saat ini, saya sedang
+          menantang diri sebagai pemula di dunia Ilmu Komputer untuk
+          mengeksplorasi sisi teknologi. Saya percaya bahwa perpaduan antara
+          imajinasi seorang penulis dan logika dasar pemrograman bisa
+          menghasilkan karya-karya digital yang unik dan menarik.
         </p>
       </div>
     </section>
 
-    <section id="cv" class="cv">
+    <section id="cv" class="cv scroll-reveal">
       <div class="container">
-        <div class="cv-card scroll-reveal">
+        <h2>Curriculum Vitae</h2>
+        <div class="cv-card">
           <div class="cv-header-profile">
-            <div class="polaroid-frame">
-              <img src="assets/profile.jpg" alt="Arie Ardinata Kusuma" class="cv-avatar" />
-              <div class="polaroid-caption">Arie A.K.</div>
+            <div class="polaroid-wrapper">
+              <div class="polaroid-frame">
+                <div
+                  class="polaroid-photo"
+                  style="
+                    background: url(&quot;images/foto-arie.jpg&quot;)
+                      center/cover no-repeat;
+                  "
+                ></div>
+                <div class="polaroid-caption">Arie A.K.</div>
+              </div>
             </div>
-            <div class="cv-profile-info">
-              <h1 class="cv-full-name">Arie Ardinata Kusuma</h1>
-              <p class="cv-headline">Mahasiswa Teknologi Informasi | Penulis Novel</p>
-              <div class="cv-contact-horizontal">
-                <span>📍 Medan, Indonesia</span>
-                <span>✉️ arieardinata@example.com</span>
+
+            <div class="profile-details">
+              <h1 class="cv-full-name">ARIE ARDINATA KUSUMA</h1>
+              <p class="cv-job-title">
+                Computer Science Student & Creative Writer
+              </p>
+              <p class="cv-summary">
+                Mahasiswa Ilmu Komputer yang memandang baris kode sebagai kanvas
+                logika dan untaian kata sebagai media cerita. Memiliki minat
+                mendalam pada pengembangan web, logika komputasi, serta
+                penulisan fiksi kreatif. Berpengalaman dalam manajemen keuangan
+                organisasi sekolah dan kepemimpinan komunitas lingkungan.
+              </p>
+            </div>
+          </div>
+
+          <hr class="cv-divider" />
+
+          <div class="cv-profile">
+            <div class="info-block">
+              <h4>Kontak Profesional</h4>
+              <p>arieardinatakusum6@gmail.com</p>
+            </div>
+            <div class="info-block">
+              <h4>Lokasi</h4>
+              <p>Medan, Sumatera Utara</p>
+            </div>
+            <div class="info-block">
+              <h4>Media Sosial</h4>
+              <div class="social-tags">
+                <div class="social-wrapper">
+                  <a
+                    href="https://www.linkedin.com/in/arieardinata-kusuma/"
+                    target="_blank"
+                    class="tag-link"
+                    >LinkedIn</a
+                  >
+                  <div class="preview-popup">
+                    <div class="popup-content">
+                      <img
+                        src="images/linkedin-preview.jpg"
+                        alt="LinkedIn Preview"
+                        class="popup-img"
+                      />
+                      <h4>Arie Ardinata Kusuma</h4>
+                      <p>Hubungkan jaringan profesional saya di LinkedIn.</p>
+                      <a
+                        href="https://www.linkedin.com/in/arieardinata-kusuma/"
+                        target="_blank"
+                        class="visit-btn"
+                        >Kunjungi →</a
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="social-wrapper">
+                  <a
+                    href="https://www.wattpad.com/story/390659182-panggilan-semesta"
+                    target="_blank"
+                    class="tag-link"
+                    >Wattpad</a
+                  >
+                  <div class="preview-popup">
+                    <div class="popup-content">
+                      <h4>@arieeksm_id</h4>
+                      <p>
+                        Baca Novel "Panggilan Semesta" dan karya sastra saya di
+                        Wattpad.
+                      </p>
+                      <a
+                        href="https://www.wattpad.com/story/390659182-panggilan-semesta"
+                        target="_blank"
+                        class="visit-btn"
+                        >Kunjungi →</a
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="social-wrapper">
+                  <a
+                    href="https://instagram.com/arieeksm_id/"
+                    target="_blank"
+                    class="tag-link"
+                    >Instagram</a
+                  >
+                  <div class="preview-popup">
+                    <div class="popup-content">
+                      <h4>@arieeksm_id</h4>
+                      <p>
+                        Lihat update visual harian, hobi, dan aktivitas saya.
+                      </p>
+                      <a
+                        href="https://instagram.com/arieeksm_id/"
+                        target="_blank"
+                        class="visit-btn"
+                        >Kunjungi →</a
+                      >
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="cv-summary">
-            <p>
-              Mahasiswa TI USU angkatan 2024 yang berdedikasi tinggi, mengombinasikan logika komputasi dengan kreativitas kepenulisan. Berpengalaman dalam organisasi kampus, manajemen finansial dana usaha, serta aksi sosial mitigasi intoleransi. Siap berkontribusi dalam pengembangan perangkat lunak berbasis tim.
-            </p>
-          </div>
+          <hr class="cv-divider" />
 
-          <div class="cv-main-grid">
-            <div class="cv-left-col">
-              <div class="cv-section-block">
-                <div class="cv-column-title">
-                  <h3>Pendidikan</h3>
+          <div class="cv-section-wrapper">
+            <div class="cv-column-title">
+              <h3>Pendidikan</h3>
+            </div>
+            <div class="education-timeline">
+              <div class="edu-item">
+                <div class="edu-header">
+                  <h4>Universitas Sumatera Utara</h4>
+                  <span class="status-badge ongoing">Ongoing</span>
                 </div>
-                <div class="edu-item">
-                  <h4>S1 Teknologi Informasi</h4>
-                  <h5>Universitas Sumatera Utara (USU)</h5>
-                  <p class="edu-date">2024 - Sekarang</p>
-                </div>
+                <p class="edu-sub">S1 - Ilmu Komputer | 2025 - Sekarang</p>
+                <p class="edu-desc">
+                  Fokus mempelajari fondasi dasar pemrograman, struktur data
+                  dasar, dan logika komputasi sebagai mahasiswa semester awal.
+                  Tertarik pada dunia Web Development dan Cybersecurity.
+                </p>
               </div>
 
-              <div class="cv-section-block">
-                <div class="cv-column-title">
-                  <h3>Keahlian</h3>
+              <div class="edu-item">
+                <div class="edu-header">
+                  <h4>MAN Asahan</h4>
                 </div>
-                <div class="skills-list">
-                  <span class="skill-tag">Pascal / C++</span>
-                  <span class="skill-tag">HTML & CSS</span>
-                  <span class="skill-tag">JavaScript</span>
-                  <span class="skill-tag">Creative Writing</span>
-                  <span class="skill-tag">Manajemen Keuangan</span>
+                <p class="edu-sub">Madrasah Aliyah Negeri | 2022 - 2025</p>
+                <p class="edu-desc">
+                  Menempuh pendidikan menengah atas berbasis madrasah. Aktif
+                  dalam kegiatan akademis, keagamaan, serta kepanduan untuk
+                  mengasah soft-skills kepemimpinan.
+                </p>
+              </div>
+
+              <div class="edu-item">
+                <div class="edu-header">
+                  <h4>MTs Negeri 2 Asahan</h4>
                 </div>
+                <p class="edu-sub">Madrasah Tsanawiyah Negeri | 2019 - 2022</p>
+                <p class="edu-desc">
+                  Menempuh pendidikan menengah pertama berbasis Islam,
+                  menyeimbangkan ilmu pengetahuan umum dengan penguatan akhlak
+                  dan nilai-nilai keagamaan.
+                </p>
+              </div>
+
+              <div class="edu-item">
+                <div class="edu-header">
+                  <h4>SD Swasta Diponegoro Kisaran</h4>
+                </div>
+                <p class="edu-sub">Sekolah Dasar | 2013 - 2018</p>
+              </div>
+            </div>
+          </div>
+
+          <hr class="cv-divider" />
+
+          <div class="cv-experience-grid">
+            <div class="exp-column">
+              <div class="column-header-title">
+                <h3>Organisasi</h3>
+              </div>
+
+              <div class="exp-item">
+                <div class="exp-meta">
+                  <span class="badge-cat school-badge">Sekolah</span>
+                  <span class="exp-date">2023 - 2025</span>
+                </div>
+                <h4>Pramuka Ambalan MAN Asahan</h4>
+                <p class="exp-role">Bendahara Umum</p>
+                <p class="exp-desc">
+                  Bertanggung jawab atas pencatatan arus kas keuangan organisasi
+                  serta mengelola unit dana usaha mandiri melalui penjualan
+                  peralatan pramuka di lingkungan internal dan eksternal
+                  sekolah. Aktif berpartisipasi dalam ajang daerah seperti
+                  Raimuna Cabang Asahan, serta mengikuti Perkemahan Terpusat
+                  Saka Wira Kartika skala nasional di tingkat daerah.
+                </p>
+              </div>
+
+              <div class="exp-item">
+                <div class="exp-meta">
+                  <span class="badge-cat env-badge">Lingkungan</span>
+                  <span class="exp-date">2024 - 2025</span>
+                </div>
+                <h4>HIMMAT (Himpunan Muda-Mudi Masjid At-Thohiroh) Kisaran</h4>
+                <p class="exp-role">Ketua Umum</p>
+                <p class="exp-desc">
+                  Memimpin jalannya organisasi keremajaan masjid, merancang visi
+                  misi pengembangan karakter remaja, serta menginisiasi kegiatan
+                  spiritual rutin seperti wirid Yasin setiap malam Jumat. Sukses
+                  bertindak sebagai Ketua Panitia Perayaan Maulid Nabi Muhammad
+                  SAW tahun 2024 yang berjalan dengan tertib dan sukses besar.
+                </p>
               </div>
             </div>
 
-            <div class="cv-right-col">
-              <div class="cv-section-block">
-                <div class="column-header-title">
-                  <h3>Kepanitiaan & Kegiatan</h3>
-                </div>
-                
-                <div class="exp-item scroll-reveal">
-                  <div class="exp-meta">
-                    <span class="badge-cat campus-badge">Kampus</span>
-                    <span class="exp-date">2026</span>
-                  </div>
-                  <h4>Porseni IMILKOM XVIII USU 2026</h4>
-                  <p class="exp-role">Anggota Tim Kesehatan</p>
-                  <p class="exp-desc">
-                    Bertanggung jawab dalam melakukan pencatatan survei kondisi kesehatan peserta serta bertindak sebagai penanggung jawab utama dalam pengelolaan, penyimpanan, dan distribusi obat-obatan guna memastikan kesiapan penanganan medis darurat selama kegiatan porseni berlangsung.
-                  </p>
-                </div>
-
-                <div class="exp-item scroll-reveal">
-                  <div class="exp-meta">
-                    <span class="badge-cat campus-badge">Kampus</span>
-                    <span class="exp-date">2025</span>
-                  </div>
-                  <h4>24th CSA (Computer Science Anniversary) USU</h4>
-                  <p class="exp-role">Sekretaris / Wakil Ketua Divisi Dana Usaha</p>
-                  <p class="exp-desc">
-                    Berperan strategis dalam memimpin administrasi operasional dan pencarian dana kreatif kepanitiaan. Berhasil mengoordinasikan pengadaan dan produksi merchandise resmi (baju, gantungan kunci) serta menjalin kemitraan dengan supplier lokal untuk menekan biaya produksi dan mengoptimalkan profit penjualan hingga melampaui target awal.
-                  </p>
-                </div>
-
-                <div class="exp-item scroll-reveal">
-                  <div class="exp-meta">
-                    <span class="badge-cat social-badge">Sosial</span>
-                    <span class="exp-date">2025</span>
-                  </div>
-                  <h4>Aksi Sosial & Edukasi Anti Intoleransi</h4>
-                  <p class="exp-role">Tim Pelaksana Sosialisasi (SMPN 7 Medan)</p>
-                  <p class="exp-desc">
-                    Merancang materi edukasi interaktif dan menjadi fasilitator lapangan dalam program pencegahan serta mitigasi tindakan intoleransi bagi siswa sekolah menengah. Berfokus pada penanaman nilai keberagaman, empati digital, dan pembentukan lingkungan sekolah yang inklusif serta aman dari perundungan.
-                  </p>
-                </div>
+            <div class="exp-column">
+              <div class="column-header-title">
+                <h3>Kepanitiaan & Kegiatan</h3>
               </div>
+
+              <div class="exp-item">
+                <div class="exp-meta">
+                  <span class="badge-cat campus-badge">Kampus</span>
+                  <span class="exp-date">2026</span>
+                </div>
+                <h4>Porseni IMILKOM XVIII USU 2026</h4>
+                <p class="exp-role">Anggota Tim Kesehatan</p>
+                <p class="exp-desc">
+                  Bertanggung jawab dalam melakukan pencatatan survei kondisi
+                  kesehatan peserta serta bertindak sebagai penanggung jawab
+                  utama dalam pengelolaan, penyimpanan, dan distribusi
+                  obat-obatan guna memastikan kesiapan penanganan medis darurat
+                  selama kegiatan porseni berlangsung.
+                </p>
+              </div>
+
+              <div class="exp-item">
+                <div class="exp-meta">
+                  <span class="badge-cat campus-badge">Kampus</span>
+                  <span class="exp-date">2025</span>
+                </div>
+                <h4>24th CSA (Computer Science Anniversary) USU</h4>
+                <p class="exp-role">
+                  Sekretaris / Wakil Ketua Divisi Dana Usaha
+                </p>
+                <p class="exp-desc">
+                  Berperan strategis dalam memimpin administrasi operasional dan
+                  pencarian dana kreatif kepanitiaan. Mengelola produksi,
+                  pengadaan barang, serta distribusi merchandise eksklusif acara
+                  (seperti kaos dan pin). Berkoordinasi intensif dengan supplier
+                  baju, serta menyusun database laporan keuangan divisi secara
+                  rapi.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <hr class="cv-divider" />
+
+          <div class="cv-skills">
+            <h3>Keahlian</h3>
+            <div class="skills-container">
+              <span class="skill-badge text-tech">C/C++</span>
+              <span class="skill-badge text-tech">Pascal</span>
+              <span class="skill-badge text-tech">HTML & CSS</span>
+              <span class="skill-badge text-tech">JavaScript</span>
+              <span class="skill-badge text-creative">Creative Writing</span>
+              <span class="skill-badge text-creative"
+                >Sastra & Kepenulisan</span
+              >
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="projects" class="projects">
+    <section id="projects" class="projects scroll-reveal">
       <div class="container">
         <h2>Proyek Terkini</h2>
         <div class="project-grid">
-          <div class="project-card scroll-reveal">
-            <div class="project-img">
-              <img src="assets/project1.jpg" alt="ManajerCatatan Pascal" />
-            </div>
-            <div class="project-info">
-              <h3>ManajerCatatan (Pascal)</h3>
-              <p>Aplikasi manajemen catatan berbasis CLI menggunakan bahasa pemrograman Pascal untuk tugas kelompok algoritma.</p>
-              <div class="project-tags">
-                <span>Pascal</span>
-                <span>CLI</span>
-              </div>
+          <div class="project-card">
+            <div
+              class="card-img"
+              style="
+                background: url(&quot;images/flipbook.png&quot;) center/cover
+                  no-repeat;
+              "
+            ></div>
+            <div class="card-content">
+              <h3>Flipbook Aljabar Linear</h3>
+              <p>
+                Media pembelajaran interaktif dengan animasi halaman dinamis
+                menggunakan HTML, CSS, dan JavaScript.
+              </p>
             </div>
           </div>
 
-          <div class="project-card scroll-reveal">
-            <div class="project-img">
-              <img src="assets/project2.jpg" alt="Linear Algebra Flipbook" />
+          <div class="project-card">
+            <div
+              class="card-img"
+              style="
+                background: url(&quot;images/catatan.png&quot;) center/cover
+                  no-repeat;
+              "
+            ></div>
+            <div class="card-content">
+              <h3>Aplikasi Manajer Catatan</h3>
+              <p>
+                Pengembangan sistem manajemen data dan catatan efisien
+                menggunakan bahasa pemrograman terstruktur.
+              </p>
             </div>
-            <div class="project-info">
-              <h3>Linear Algebra Flipbook</h3>
-              <p>Media pembelajaran interaktif mengenai matriks dan determinan berbasis web menggunakan HTML, CSS, dan JavaScript.</p>
-              <div class="project-tags">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
+          </div>
+
+          <div class="project-card novel-card">
+            <div
+              class="card-img"
+              style="
+                background: url(&quot;images/novel.jpg&quot;) center/cover
+                  no-repeat;
+              "
+            ></div>
+            <div class="card-content">
+              <h3>Novel "Panggilan Semesta"</h3>
+              <p>
+                Selain bergelut di dunia IT, saya juga suka menulis novel karena
+                hobi dan mengembangkan minat bakat saya di dunia sastra.
+              </p>
+              <div class="card-action">
+                <a
+                  href="https://www.wattpad.com/story/390659182-panggilan-semesta"
+                  target="_blank"
+                  class="btn-visit"
+                >
+                  Kunjungi Novel
+                </a>
               </div>
             </div>
           </div>
@@ -181,35 +398,72 @@
       </div>
     </section>
 
-    <section id="feedback" class="feedback">
-      <div class="container scroll-reveal">
-        <h2>Kritik, Saran & Ulasan</h2>
+    <section id="feedback" class="feedback scroll-reveal">
+      <div class="container">
+        <h2>Berikan Ulasan Anda</h2>
         <div class="feedback-card">
-          <form action="https://formspree.io/f/xvggzzlb" method="POST">
+          <form
+            action="https://formspree.io/f/meedajvw"
+            method="POST"
+            class="feedback-form"
+          >
             <div class="form-group">
               <label for="fb-name">Nama Lengkap</label>
-              <input type="text" id="fb-name" name="Nama" placeholder="Masukkan nama Anda..." required />
-            </div>
-
-            <div class="form-group">
-              <label for="fb-inst">Instansi / Hubungan Kerja</label>
-              <input type="text" id="fb-inst" name="Instansi" placeholder="Misal: Mahasiswa USU, Umum, Karyawan..." required />
+              <input
+                type="text"
+                id="fb-name"
+                name="Nama"
+                placeholder="Masukkan nama Anda"
+                required
+              />
             </div>
 
             <div class="form-group">
               <label>Rating Portofolio</label>
               <div class="star-rating">
-                <input type="radio" id="star5" name="Rating" value="5 Bintang" required /><label for="star5" title="Sempurna!">★</label>
-                <input type="radio" id="star4" name="Rating" value="4 Bintang" /><label for="star4" title="Bagus">★</label>
-                <input type="radio" id="star3" name="Rating" value="3 Bintang" /><label for="star3" title="Cukup">★</label>
-                <input type="radio" id="star2" name="Rating" value="2 Bintang" /><label for="star2" title="Buruk">★</label>
-                <input type="radio" id="star1" name="Rating" value="1 Bintang" /><label for="star1" title="Sangat Buruk">★</label>
+                <input
+                  type="radio"
+                  id="star5"
+                  name="Rating"
+                  value="5 Bintang"
+                  required
+                /><label for="star5" title="Sempurna!">★</label>
+                <input
+                  type="radio"
+                  id="star4"
+                  name="Rating"
+                  value="4 Bintang"
+                /><label for="star4" title="Bagus">★</label>
+                <input
+                  type="radio"
+                  id="star3"
+                  name="Rating"
+                  value="3 Bintang"
+                /><label for="star3" title="Cukup">★</label>
+                <input
+                  type="radio"
+                  id="star2"
+                  name="Rating"
+                  value="2 Bintang"
+                /><label for="star2" title="Buruk">★</label>
+                <input
+                  type="radio"
+                  id="star1"
+                  name="Rating"
+                  value="1 Bintang"
+                /><label for="star1" title="Sangat Buruk">★</label>
               </div>
             </div>
 
             <div class="form-group">
               <label for="fb-comment">Komentar / Saran</label>
-              <textarea id="fb-comment" name="Komentar" rows="5" placeholder="Tuliskan pesan, kesan, atau kritik membangun di sini..." required></textarea>
+              <textarea
+                id="fb-comment"
+                name="Komentar"
+                rows="5"
+                placeholder="Tuliskan pesan, kesan, atau kritik membangun di sini..."
+                required
+              ></textarea>
             </div>
 
             <button type="submit" class="btn btn-submit">Kirim Ulasan</button>
@@ -224,12 +478,13 @@
 
     <script src="script.js"></script>
 
-    <audio id=\"bgm\" src=\"audio/bgm-santai.mp3\" loop></audio>
+    <audio id="bgm" src="audio/bgm-santai.mp3" loop></audio>
 
     <div id="music-control" class="music-btn" onclick="toggleMusic()">
       <span id="music-icon">🎵</span>
     </div>
 
+    <!-- TOMBOL TOGGLE TERMINAL & WIDGET TERMINAL -->
     <div id="term-toggle-btn" class="term-toggle-btn" title="Buka Terminal">
       &gt;_
     </div>
@@ -248,7 +503,13 @@
         </p>
         <div class="term-input-wrapper">
           <span class="term-prompt">~/portfolio $</span>
-          <input type="text" id="term-input" autocomplete="off" spellcheck="false" />
+          <input
+            type="text"
+            id="term-input"
+            autocomplete="off"
+            spellcheck="false"
+            autofocus
+          />
         </div>
         <p id="term-response"></p>
       </div>
