@@ -5,6 +5,7 @@
   --primary: #14b8a6; /* Teal / Hijau kebiruan */
   --primary-hover: #0d9488;
   --card-bg: #ffffff;
+  --heading: #115e59; /* Warna khusus judul besar (h1, h2, nama CV, dll) */
 }
 
 * {
@@ -131,7 +132,7 @@ body {
 .hero h1 {
   font-size: 3.5rem;
   margin-bottom: 10px;
-  color: #115e59;
+  color: var(--heading);
 }
 
 .highlight {
@@ -198,7 +199,7 @@ section h2 {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 40px;
-  color: #115e59;
+  color: var(--heading);
 }
 
 .about p {
@@ -383,7 +384,7 @@ section h2 {
   font-size: 0.85rem;
   font-weight: 600;
   text-align: center;
-  color: #475569;
+  color: var(--text-muted);
   margin-top: 10px;
 }
 
@@ -395,7 +396,7 @@ section h2 {
 .cv-full-name {
   font-size: 2.2rem;
   font-weight: 600;
-  color: #115e59;
+  color: var(--heading);
   letter-spacing: 1px;
   line-height: 1.2;
   margin-bottom: 5px;
@@ -427,7 +428,7 @@ section h2 {
 .cv-column-title h3,
 .column-header-title h3 {
   font-size: 1.4rem;
-  color: #115e59;
+  color: var(--heading);
   border-left: 4px solid var(--primary);
   padding-left: 10px;
   margin-bottom: 20px;
@@ -484,7 +485,7 @@ section h2 {
 
 .edu-desc {
   font-size: 0.95rem;
-  color: #475569;
+  color: var(--text-muted);
   margin: 5px 0 0 0;
 }
 
@@ -562,7 +563,7 @@ section h2 {
 
 .exp-desc {
   font-size: 0.95rem;
-  color: #475569;
+  color: var(--text-muted);
   text-align: justify;
   line-height: 1.5;
 }
@@ -570,7 +571,7 @@ section h2 {
 /* --- Bagian Keahlian --- */
 .cv-skills h3 {
   font-size: 1.4rem;
-  color: #115e59;
+  color: var(--heading);
   margin-bottom: 15px;
 }
 
@@ -667,7 +668,7 @@ footer {
 
 .form-group label {
   font-weight: 600;
-  color: #115e59;
+  color: var(--heading);
   font-size: 0.95rem;
 }
 
@@ -986,6 +987,7 @@ body.theme-frappe {
   --primary: #8caaee; /* Sapphire */
   --primary-hover: #babbf1; /* Lavender */
   --card-bg: #292c3c; /* Mantle */
+  --heading: #c6d0f5; /* Text - biar judul besar ikut terang, bukan teal gelap */
 }
 
 /* Transisi Warna Agar Smooth saat Berubah */
@@ -1038,6 +1040,52 @@ body.theme-frappe .form-group input,
 body.theme-frappe .form-group textarea {
   background: #232634;
   border-color: rgba(140, 170, 238, 0.3);
+}
+
+/* Kartu pengalaman/organisasi di CV — sebelumnya nyangkut putih (#fdfdfd) */
+body.theme-frappe .exp-item {
+  background: #232634;
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Section & kartu form ulasan — sebelumnya nyangkut putih (#ffffff / #f0fdfa) */
+body.theme-frappe .feedback {
+  background-color: #232634;
+}
+body.theme-frappe .feedback-card {
+  background: #292c3c;
+  border-color: rgba(140, 170, 238, 0.15);
+}
+
+/* Chip link LinkedIn/Wattpad/Instagram — sebelumnya nyangkut cyan muda */
+body.theme-frappe .tag-link {
+  background-color: #232634;
+  border-color: rgba(140, 170, 238, 0.25);
+}
+
+/* Popup preview sosial media — sebelumnya nyangkut putih, bikin teks var(--text-main) tak kebaca */
+body.theme-frappe .preview-popup {
+  background: #292c3c;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
+}
+body.theme-frappe .preview-popup::after {
+  border-color: #292c3c transparent transparent transparent;
+}
+
+/* Ring bulatan timeline pendidikan — border putihnya sebelumnya norak di atas gelap */
+body.theme-frappe .edu-item::before {
+  border-color: #303446;
+}
+
+/* Garis pembatas antar bagian CV — versi teal-nya nyaris tak terlihat di gelap */
+body.theme-frappe .cv-divider {
+  background: rgba(198, 208, 245, 0.12);
+}
+
+/* Redam sedikit badge warna-warni (sekolah/lingkungan/kampus/skill) biar tidak "berantakan" & terlalu mencolok di UI gelap */
+body.theme-frappe .badge-cat,
+body.theme-frappe .skill-badge {
+  filter: brightness(0.9) saturate(0.85);
 }
 
 /* ==========================================
