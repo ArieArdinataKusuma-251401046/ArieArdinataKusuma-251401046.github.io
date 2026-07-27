@@ -1,32 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // 1. ANIMASI SCROLL REVEAL (Bawaan awal)
+  // 1. ANIMASI SCROLL REVEAL (IntersectionObserver)
   const scrollElements = document.querySelectorAll(".scroll-reveal");
 
-  const elementInView = (el, dividend = 1) => {
-    const elementTop = el.getBoundingClientRect().top;
-    return (
-      elementTop <=
-      (window.innerHeight || document.documentElement.clientHeight) / dividend
-    );
-  };
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target); // stop mengamati setelah muncul
+        }
+      });
+    },
+    { threshold: 0.15 },
+  );
 
-  const displayScrollElement = (element) => {
-    element.classList.add("visible");
-  };
-
-  const handleScrollAnimation = () => {
-    scrollElements.forEach((el) => {
-      if (elementInView(el, 1.15)) {
-        displayScrollElement(el);
-      }
-    });
-  };
-
-  window.addEventListener("scroll", () => {
-    handleScrollAnimation();
-  });
-
-  handleScrollAnimation();
+  scrollElements.forEach((el) => observer.observe(el));
 
   // 2. LOGIKA EFEK MENGETIK JAVASCRIPT
   const txtType = document.querySelector(".txt-type");
@@ -239,5 +227,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
     });
+  }
+
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  if (prefersDark) {
+    document.body.classList.add("theme-frappe");
+    currentTheme = "frappe"; // sinkronkan state supaya terminal tahu tema aktif
   }
 });
